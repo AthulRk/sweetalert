@@ -78,108 +78,125 @@ class _MyHomePageState extends State<MyHomePage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               new Text("Basic usage"),
-              new RaisedButton(
-                onPressed: () {
-                  SweetAlert.show(context, title: "Just show a message");
-                },
-                child: new Text("Try me"),
-                color: SweetAlert.success,
-                textColor: Colors.white,
-              ),
+              new ElevatedButton(
+                  onPressed: () {
+                    SweetAlert.show(context, title: "Just show a message");
+                  },
+                  child: new Text("Try me"),
+                  style: ElevatedButton.styleFrom(
+                    primary: SweetAlert.success,
+                    textColor: Colors.white,
+                  )),
               new Text("Title with subtitle"),
-              new RaisedButton(
-                onPressed: () {
-                  SweetAlert.show(context,
-                      title: "Just show a message",
-                      subtitle: "Sweet alert is pretty");
-                },
-                child: new Text("Try me"),
-                color: SweetAlert.success,
-                textColor: Colors.white,
-              ),
+              new ElevatedButton(
+                  onPressed: () {
+                    SweetAlert.show(context,
+                        title: "Just show a message",
+                        subtitle: "Sweet alert is pretty");
+                  },
+                  child: new Text("Try me"),
+                  style: ElevatedButton.styleFrom(
+                    primary: SweetAlert.success,
+                    textColor: Colors.white,
+                  )),
               new Text("A success message"),
-              new RaisedButton(
-                onPressed: () {
-                  SweetAlert.show(context,
-                      title: "Just show a message",
-                      subtitle: "Sweet alert is pretty",
-                      style: SweetAlertStyle.success);
-                },
-                child: new Text("Try me"),
-                color: SweetAlert.success,
-                textColor: Colors.white,
-              ),
+              new ElevatedButton(
+                  onPressed: () {
+                    SweetAlert.show(context,
+                        title: "Just show a message",
+                        subtitle: "Sweet alert is pretty",
+                        style: SweetAlertStyle.success);
+                  },
+                  child: new Text("Try me"),
+                  style: ElevatedButton.styleFrom(
+                    primary: SweetAlert.success,
+                    textColor: Colors.white,
+                  )),
               new Text(
                   "A warning message,with a function action on \"Confirm\"-button"),
-              new RaisedButton(
-                onPressed: () {
-                  SweetAlert.show(context,
-                      title: "Just show a message",
-                      subtitle: "Sweet alert is pretty",
-                      style: SweetAlertStyle.confirm,
-                      showCancelButton: true, onPress: (bool isConfirm) {
-                    if (isConfirm) {
-                      SweetAlert.show(context,style: SweetAlertStyle.success,title: "Success");
+              new ElevatedButton(
+                  onPressed: () {
+                    SweetAlert.show(context,
+                        title: "Just show a message",
+                        subtitle: "Sweet alert is pretty",
+                        style: SweetAlertStyle.confirm,
+                        showCancelButton: true, onPress: (bool isConfirm) {
+                      if (isConfirm) {
+                        SweetAlert.show(context,
+                            style: SweetAlertStyle.success, title: "Success");
 
-                      // return false to keep dialog
-                      return false;
-                    }
-                  });
-                },
-                child: new Text("Try me"),
-                color: SweetAlert.success,
-                textColor: Colors.white,
-              ),
+                        // return false to keep dialog
+                        return false;
+                      }
+                    });
+                  },
+                  child: new Text("Try me"),
+                  style: ElevatedButton.styleFrom(
+                    primary: SweetAlert.success,
+                    textColor: Colors.white,
+                  )),
               new Text("Do a job that may take some time"),
-              new RaisedButton(
+              new ElevatedButton(
                 onPressed: () {
                   SweetAlert.show(context,
                       subtitle: "Do you want to delete this message",
                       style: SweetAlertStyle.confirm,
                       showCancelButton: true, onPress: (bool isConfirm) {
-                    if(isConfirm){
-                      SweetAlert.show(context,subtitle: "Deleting...", style: SweetAlertStyle.loading);
-                      new Future.delayed(new Duration(seconds: 2),(){
-                        SweetAlert.show(context,subtitle: "Success!", style: SweetAlertStyle.success);
+                    if (isConfirm) {
+                      SweetAlert.show(context,
+                          subtitle: "Deleting...",
+                          style: SweetAlertStyle.loading);
+                      new Future.delayed(new Duration(seconds: 2), () {
+                        SweetAlert.show(context,
+                            subtitle: "Success!",
+                            style: SweetAlertStyle.success);
                       });
-                    }else{
-                      SweetAlert.show(context,subtitle: "Canceled!", style: SweetAlertStyle.error);
+                    } else {
+                      SweetAlert.show(context,
+                          subtitle: "Canceled!", style: SweetAlertStyle.error);
                     }
                     // return false to keep dialog
                     return false;
                   });
                 },
                 child: new Text("Try me"),
-                color: SweetAlert.success,
-                textColor: Colors.white,
+                style: ElevatedButton.styleFrom(
+                  color: SweetAlert.success,
+                  textColor: Colors.white,
+                ),
               ),
-
-
               new Text("Do a job that may fail"),
-              new RaisedButton(
+              new ElevatedButton(
                 onPressed: () {
                   SweetAlert.show(context,
                       subtitle: "Do you want to delete this message",
                       style: SweetAlertStyle.confirm,
                       showCancelButton: true, onPress: (bool isConfirm) {
-                        if (isConfirm) {
-                        //Return false to keep dialog
-                          if(isConfirm){
-                            SweetAlert.show(context,subtitle: "Deleting...", style: SweetAlertStyle.loading);
-                            new Future.delayed(new Duration(seconds: 2),(){
-                              SweetAlert.show(context,subtitle: "Job fail!", style: SweetAlertStyle.error);
-                            });
-                          }else{
-                            SweetAlert.show(context,subtitle: "Canceled!", style: SweetAlertStyle.error);
-                          }
-                          return false;
-                        }
-
-                      });
+                    if (isConfirm) {
+                      //Return false to keep dialog
+                      if (isConfirm) {
+                        SweetAlert.show(context,
+                            subtitle: "Deleting...",
+                            style: SweetAlertStyle.loading);
+                        new Future.delayed(new Duration(seconds: 2), () {
+                          SweetAlert.show(context,
+                              subtitle: "Job fail!",
+                              style: SweetAlertStyle.error);
+                        });
+                      } else {
+                        SweetAlert.show(context,
+                            subtitle: "Canceled!",
+                            style: SweetAlertStyle.error);
+                      }
+                      return false;
+                    }
+                  });
                 },
                 child: new Text("Try me"),
-                color: SweetAlert.success,
-                textColor: Colors.white,
+                style: ElevatedButton.styleFrom(
+                  primary: SweetAlert.success,
+                  textColor: Colors.white,
+                ),
               ),
             ],
           ),
