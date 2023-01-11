@@ -174,7 +174,9 @@ class SweetAlertDialogState extends State<SweetAlertDialog>
             children: <Widget>[
               new ElevatedButton(
                 onPressed: cancel,
-                color: _options.cancelButtonColor ?? SweetAlert.cancel,
+                style: ElevatedButton.styleFrom(
+                  primary: _options.cancelButtonColor ?? SweetAlert.cancel,
+                ),
                 child: new Text(
                   _options.cancelButtonText ?? SweetAlert.cancelText,
                   style: new TextStyle(color: Colors.white, fontSize: 16.0),
@@ -185,7 +187,9 @@ class SweetAlertDialogState extends State<SweetAlertDialog>
               ),
               new ElevatedButton(
                 onPressed: confirm,
-                color: _options.confirmButtonColor ?? SweetAlert.danger,
+                style: ElevatedButton.styleFrom(
+                  primary: _options.confirmButtonColor ?? SweetAlert.danger,
+                ),
                 child: new Text(
                   _options.confirmButtonText ?? SweetAlert.confirmText,
                   style: new TextStyle(color: Colors.white, fontSize: 16.0),
@@ -199,7 +203,9 @@ class SweetAlertDialogState extends State<SweetAlertDialog>
           padding: new EdgeInsets.only(top: 10.0),
           child: new ElevatedButton(
             onPressed: confirm,
-            color: _options.confirmButtonColor ?? SweetAlert.success,
+            style: ElevatedButton.styleFrom(
+              primary: _options.confirmButtonColor ?? SweetAlert.success,
+            ),
             child: new Text(
               _options.confirmButtonText ?? SweetAlert.successText,
               style: new TextStyle(color: Colors.white, fontSize: 16.0),

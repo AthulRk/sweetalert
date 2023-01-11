@@ -79,58 +79,62 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               new Text("Basic usage"),
               new ElevatedButton(
-                onPressed: () {
-                  SweetAlert.show(context, title: "Just show a message");
-                },
-                child: new Text("Try me"),
-                color: SweetAlert.success,
-                textColor: Colors.white,
-              ),
+                  onPressed: () {
+                    SweetAlert.show(context, title: "Just show a message");
+                  },
+                  child: new Text("Try me"),
+                  style: ElevatedButton.styleFrom(
+                    primary: SweetAlert.success,
+                    textColor: Colors.white,
+                  )),
               new Text("Title with subtitle"),
               new ElevatedButton(
-                onPressed: () {
-                  SweetAlert.show(context,
-                      title: "Just show a message",
-                      subtitle: "Sweet alert is pretty");
-                },
-                child: new Text("Try me"),
-                color: SweetAlert.success,
-                textColor: Colors.white,
-              ),
+                  onPressed: () {
+                    SweetAlert.show(context,
+                        title: "Just show a message",
+                        subtitle: "Sweet alert is pretty");
+                  },
+                  child: new Text("Try me"),
+                  style: ElevatedButton.styleFrom(
+                    primary: SweetAlert.success,
+                    textColor: Colors.white,
+                  )),
               new Text("A success message"),
               new ElevatedButton(
-                onPressed: () {
-                  SweetAlert.show(context,
-                      title: "Just show a message",
-                      subtitle: "Sweet alert is pretty",
-                      style: SweetAlertStyle.success);
-                },
-                child: new Text("Try me"),
-                color: SweetAlert.success,
-                textColor: Colors.white,
-              ),
+                  onPressed: () {
+                    SweetAlert.show(context,
+                        title: "Just show a message",
+                        subtitle: "Sweet alert is pretty",
+                        style: SweetAlertStyle.success);
+                  },
+                  child: new Text("Try me"),
+                  style: ElevatedButton.styleFrom(
+                    primary: SweetAlert.success,
+                    textColor: Colors.white,
+                  )),
               new Text(
                   "A warning message,with a function action on \"Confirm\"-button"),
               new ElevatedButton(
-                onPressed: () {
-                  SweetAlert.show(context,
-                      title: "Just show a message",
-                      subtitle: "Sweet alert is pretty",
-                      style: SweetAlertStyle.confirm,
-                      showCancelButton: true, onPress: (bool isConfirm) {
-                    if (isConfirm) {
-                      SweetAlert.show(context,
-                          style: SweetAlertStyle.success, title: "Success");
+                  onPressed: () {
+                    SweetAlert.show(context,
+                        title: "Just show a message",
+                        subtitle: "Sweet alert is pretty",
+                        style: SweetAlertStyle.confirm,
+                        showCancelButton: true, onPress: (bool isConfirm) {
+                      if (isConfirm) {
+                        SweetAlert.show(context,
+                            style: SweetAlertStyle.success, title: "Success");
 
-                      // return false to keep dialog
-                      return false;
-                    }
-                  });
-                },
-                child: new Text("Try me"),
-                color: SweetAlert.success,
-                textColor: Colors.white,
-              ),
+                        // return false to keep dialog
+                        return false;
+                      }
+                    });
+                  },
+                  child: new Text("Try me"),
+                  style: ElevatedButton.styleFrom(
+                    primary: SweetAlert.success,
+                    textColor: Colors.white,
+                  )),
               new Text("Do a job that may take some time"),
               new ElevatedButton(
                 onPressed: () {
@@ -156,8 +160,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   });
                 },
                 child: new Text("Try me"),
-                color: SweetAlert.success,
-                textColor: Colors.white,
+                style: ElevatedButton.styleFrom(
+                  color: SweetAlert.success,
+                  textColor: Colors.white,
+                ),
               ),
               new Text("Do a job that may fail"),
               new ElevatedButton(
@@ -187,8 +193,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   });
                 },
                 child: new Text("Try me"),
-                color: SweetAlert.success,
-                textColor: Colors.white,
+                style: ElevatedButton.styleFrom(
+                  primary: SweetAlert.success,
+                  textColor: Colors.white,
+                ),
               ),
             ],
           ),
